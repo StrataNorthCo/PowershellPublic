@@ -6,6 +6,7 @@ Version: 1.0
 Date: 2021-03-21
 Author: Julian Thibeault
 Website: https://StrataNorth.co
+GitHub: https://github.com/StrataNorthCo/PowershellPublic
 #>
 
 <#
@@ -26,7 +27,7 @@ Website: https://StrataNorth.co
   Creation Date:  2021/03/21
   Purpose/Change: Initial
 .LINK
-  https://StrataNorth.co
+  https://github.com/StrataNorthCo/PowershellPublic/blob/main/Active%20Directory/AD-GetAdUser-RemoveAdminCount1-PS.ps1
 #>
 
 
