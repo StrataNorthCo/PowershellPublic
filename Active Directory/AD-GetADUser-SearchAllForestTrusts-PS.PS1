@@ -22,13 +22,20 @@
 
   <#
     OPTON1
-    $userArray = @("user1","user2")
+
+    $users = @("user1","user2")
+    $userArray = @()
+    $users | ForEach-Object {
+    $userArray += [pscustomobject]@{'name'=$_}
+
+}
     #>
 <#
     OPTION2
-    $csv = Import-csv -Path .\EnterPathToCSV
+    $usersArray = Import-csv -Path .\EnterPathToCSV
 
 #>
+
 
 <#User defined variables#>
 $report = @()
@@ -55,13 +62,13 @@ foreach ($d in $dcs) {
     foreach ($u in $userArray) {
 
         try {
-            Get-ADUser -Identity $u -Server $d -ErrorAction Continue
-            write-host "Found $($u) on $($d)" -ForegroundColor green
+            Get-ADUser -Identity $u.name -Server $d -ErrorAction Continue
+            write-host "Found $($u.name) on $($d)" -ForegroundColor green
 
             <# Prepare the report #>
             $obj = New-Object PSOBJECT
 
-            $obj | Add-Member -TYPE NoteProperty -NAME Name -Value $u
+            $obj | Add-Member -TYPE NoteProperty -NAME Name -Value $u.name
             $obj | Add-Member -TYPE NoteProperty -NAME Domain -Value $d.Substring($d.IndexOf(".") + 1)
 
             $report += $obj 
