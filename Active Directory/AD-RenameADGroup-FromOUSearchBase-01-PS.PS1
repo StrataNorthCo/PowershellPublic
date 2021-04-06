@@ -16,7 +16,7 @@
   Creation Date:  2021/04/06
   Purpose/Change: Initial
 .LINK
-  https://github.com/StrataNorthCo/PowershellPublic/blob/main/Active%20Directory/AD-GetAdUser-SearchAllForestTrusts-PS.ps1
+  https://github.com/StrataNorthCo/PowershellPublic/blob/main/Active%20Directory/AD-RenameADGroup-FromOUSearchBase-01-PS.ps1
 
   #>
 
